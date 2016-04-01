@@ -5,19 +5,219 @@
 	<title>Förkortningar</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<style type="text/css">
-	body{
-		background-color: black;
-		color: white;
-	}
-	</style>
-</head>
-<body>
-<center><h1>Förkortningar.se</h1></center><hr>	
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	
+	<style type="text/css">
+	
+	body{
+		
+		
+		background-image: url(img/words_T.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-position: center;
+        /*background-size: cover;*/
+
+		color: white;
+		text-align: center;
+	}
+
+	.jumbotron{
+		padding-top: 23em;
+		background-color: transparent;
+	}
+	
+	/* sök knapp fix */
+	.input-group-addon, .input-group-btn {
+            width: 0%;
+        }
+
+/*	#dagensOrdDiv{
+		width: 20%;
+		float: right;
+		border: 1px solid white;
+		margin-right: 1em;
+	}*/
+	
+
+
+	#dagensOrdDiv{
+		
+		border: 1px solid white;
+		background-color: #4775B3;
+		width: 20%;
+		float: right;
+		margin-top: 2em;
+    	margin-right: 1em;
+	}
+	
+	.dagensOrd{
+		color: red;
+		font-size: 2em;
+	}
+
+	.dagensOrdForklaring{
+
+		border: 1px solid white;
+		margin: 1px 20px 10px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+	#dagensOrdDiv2{
+		
+		border: 1px solid white;
+		background-color: #4775B3;
+		width: 20%;
+		float: left;
+		margin-top: 2em;
+    	margin-left: 1em;
+	}
+	
+	.dagensOrd2{
+		color: red;
+		font-size: 2em;
+	}
+
+	.dagensOrdForklaring2{
+		margin: 1px 1px 10px;
+	}
+	
+
+	
+
+
+
+	#resultatDiv{
+		margin-left: 30em;
+		width: 50%;
+		border: 3px solid white;
+	}
+	</style>
+
+
+	 <script type="text/javascript">
+    	function run () {
+
+    		var ord = document.getElementById('enSoking').value;
+    		var text = document.getElementById('resultatText');
+
+    		
+
+
+    		if(ord === "red")
+    		{
+
+    			text.style.color = "red";
+
+
+    		}else if(ord === "blue")
+    		{
+
+    			text.style.color = "blue";
+
+
+    		}else if(ord === "Aleks" || ord === "aleks" || ord === "ALEKS"){
+
+    			
+    			text.innerHTML = "Han e ju bara bäst!"
+
+    		}else{
+
+    			text.innerHTML = "Hittade inte den förkortningen, detta är ju bara en prototyp :P";
+
+
+    		}
+    	}
+    </script>
+</head>
+<body>
+	
+
+      <div class="container">
+      </div>
+
+		<div class="row" id="dagensOrdDiv">
+      		<div>
+      			<h2>Dagens förkortning</h2>
+      			<p class="dagensOrd">TCP</p>
+      			<p class="dagensOrdForklaring">The Transmission Control Protocol (TCP) is a core protocol of the Internet protocol suite. It originated in the initial network implementation in which it complemented the Internet Protocol (IP). Therefore, the entire suite is commonly referred to as TCP/IP.</p>
+      		</div>
+      	</div>
+
+		
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+
+      	
+
+
+
+
+
+        <h1>förkortningar.se</h1>
+
+        <p>- Alla förkortningar på ett och samma ställe</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <input type="text" id="enSoking" class="form-control" placeholder="Vilken förkortning söker du?" style="margin-left: 23em;width: 33em;">
+              <span class="input-group-btn">
+              	<a class="btn btn-primary" href="#" role="button" onclick="run();">Sök</a></p>
+              </span>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+      </div>
+    </div>
+	
+
+	<div class="row">
+			<div id="resultatDiv">
+				<span><p id="resultatText"></p></span>
+			</div>
+		</div>
+
+
+    <div>
+    	
+		<div class="row" id="dagensOrdDiv2">
+      		<div>
+      			<h2>Lär dig en förkortning</h2>
+      			<p class="dagensOrd2">DROPDOWN HÄR!</p>
+      			<p class="dagensOrdForklaring2">Resultat: </p>
+      			<span class="input-group-btn">
+              	<a class="btn btn-primary" href="#" role="button">Sök</a>
+              </span>
+      		</div>
+      	</div>
+    </div>
+	
+	
+
+   
 
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
